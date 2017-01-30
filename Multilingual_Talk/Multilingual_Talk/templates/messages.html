@@ -1,0 +1,20 @@
+{% if not full %}
+  <p class="centered text-center bg-warning">We are finding you a match</p>
+{% else %}
+  <p class = "centered text-center bg-success">We found you a match!<p>
+{% endif %}
+
+{% for msg in messages %}
+  <div class="row container">
+    {% if msg.message_sender == userID %}
+      <div class = "col-xs-2"></div>
+    {% endif %}
+    <div class = "col-xs-10 alert{% if msg.message_sender == userID %} alert-info{% else %} alert-warning{% endif %}">
+      {{ msg.message_content|linebreaksbr }}
+    </div>
+  </div>
+{% endfor %}
+
+{% if left %}
+  <p class = "centered text-center bg-danger">The other user left<p>
+{% endif %}

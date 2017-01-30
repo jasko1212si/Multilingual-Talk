@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+  <div class="col-sm-6 col-lg-4 hidden-xs">
+    <img src = "{% static "pics/Logo-Dark-Grey.png" %}" class="fit">
+  </div>
+  <div class="col-lg-8 col-sm-6 col-xs-12 col-md-offset trans-10">
+    <h2>Get Started</h2>
+    <form method="post" action="{% url 'match' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="sel">I want to speak to someone in:</label>
+        <select class="form-control" id="sel" name="lang">
+          <option>English</option>
+          <option>French</option>
+          <option>German</option>
+          <option>Spanish</option>
+          <option>Italian</option>
+          <option>Russian</option>
+          <option>Mandarin</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>I am a:</label><br/>
+        <label class="radio-inline"><input type="radio" name = "native" value = "True">Native</label>
+        <label class="radio-inline"><input type="radio" name = "native" value = "False">Learner</label>
+      </div>
+      <input type="submit" class="btn btn-default" value="Go">
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

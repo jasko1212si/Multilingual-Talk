@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+  <div id="messages">
+  </div>
+
+  <div class="ghost-80"></div>
+</div>
+
+<div class = "msg-write">
+  <form method="post">
+    {% csrf_token %}
+    <div>
+      <div class="col-xs-8 col-sm-10 no-padding">
+        <textarea class="form-control message-box" name="msg" id="textarea" autofocus></textarea>
+      </div>
+      <div class="col-xs-4 col-sm-2">
+        <input type="submit" value="Send" class="btn btn-primary fill">
+      </div>
+    </div>
+  </form>
+</div>
+
+{% load static %}
+<script type="text/javascript" src="{% static "scripts/chat.js" %}"></script>
+{% endblock content %}

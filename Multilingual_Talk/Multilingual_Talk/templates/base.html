@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title>Multilingual Talk</title>
+    {% load static %}
+    <link rel="shortcut icon" href="{% static "pics/favicon.ico" %}" type="image/x-icon">
+    <link rel="icon" href="{% static "pics/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "scripts/style.css" %}">
+
+    <!-- BOOTSTRAP -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="ghost-80"></div>
+
+    {% block content %}
+    {% endblock content %}
+
+  </body>
+
+  <div class="fixed">
+    <nav class="navbar navbar-inverse no-radius">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <span><img src = "{% static "pics/Logo-Light-Grey.png" %}" class="fit"></span> Multilingual Talk
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+</html>
